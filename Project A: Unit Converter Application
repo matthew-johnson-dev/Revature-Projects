@@ -1,0 +1,112 @@
+package main;
+
+import java.util.Scanner;
+
+public class Converter {
+
+	public static void main (String[] args) {
+		
+		//initialize menu
+		System.out.println(
+				"Please choose a number from the following menu to proceed: \n"
+						+ "1. Inch to Millimeter \n"
+						+ "2. Inch to Centimeter \n"
+						+ "3. Foot to meter  \n"
+						+ "4. Foot to yard \n"
+						+ "5. Mile to Kilometer \n"
+						+ "6. Mile to Nautical Mile \n"
+						+ "7. Nautical Mile to Kilometer \n"
+						+ "8. Quit");
+		
+		//gather menu input to establish menuSelection variable
+		Scanner scanner = new Scanner(System.in);		
+		int menuSelection = scanner.nextInt();
+		
+		//Confirm scanner is operating
+		System.out.println("You chose option " + menuSelection);
+
+		//Begin and establish while-loop parameters
+		while (menuSelection != 8) {
+			
+			//Begin switch statement to cycle through conversions based on menu selection
+			switch(menuSelection) {
+			case 0: //re-initialize menu
+				System.out.println(
+					"Please choose a number from the following menu to proceed: \n"
+					+ "1. Inch to Millimeter \n"
+					+ "2. Inch to Centimeter \n"
+					+ "3. Foot to meter  \n"
+					+ "4. Foot to yard \n"
+					+ "5. Mile to Kilometer \n"
+					+ "6. Mile to Nautical Mile \n"
+					+ "7. Nautical Mile to Kilometer \n"
+					+ "8. Quit");
+				menuSelection = scanner.nextInt();
+				break;
+				
+			case 1: //Conversion one: inches to millimeters
+				System.out.println("How many inches would you like to convert to millimeters?");
+				int quantity = scanner.nextInt();
+				System.out.println("\n" + quantity + " inches is equal to " + (quantity * 25.4) + " millimeters. \n");
+				menuSelection = 0;
+				break;
+				
+			case 2: //Conversion two: inches to centimeters
+				System.out.println("How many inches would you like to convert to centimeters?");
+				int quantity2 = scanner.nextInt();
+				System.out.println("\n" + quantity2 + " inches is equal to " + (quantity2 * 2.54) + " millimeters. \n");
+				menuSelection = 0;
+				break;
+				
+			case 3: //Conversion three: feet to meters
+				System.out.println("How many feet would you like to convert to meters?");
+				int quantity3 = scanner.nextInt();
+				System.out.println("\n" + quantity3 + " feet is equal to " + (quantity3 * .3048) + " meters. \n");
+				menuSelection = 0;
+				break;
+				
+			case 4: //Conversion three: feet to yards
+				System.out.println("How many feet would you like to convert to yards?");
+				int quantity4 = scanner.nextInt();
+				System.out.println("\n" + quantity4 + " feet is equal to " + (quantity4 * .999999999) + " yards. \n");
+				menuSelection = 0;
+				break;
+				
+			case 5: //Conversion three: miles to kilometers
+				System.out.println("How many miles would you like to convert to kilometers?");
+				int quantity5 = scanner.nextInt();
+				System.out.println("\n" + quantity5 + " miles is equal to " + (quantity5 * 1.609344) + " kilometers. \n");
+				menuSelection = 0;
+				break;
+				
+			case 6: //Conversion three: miles to nautical miles
+				System.out.println("How many miles would you like to convert to nautical miles?");
+				int quantity6 = scanner.nextInt();
+				System.out.println("\n" + quantity6 + " miles is equal to " + (quantity6 * .868976242) + " nautical miles. \n");
+				menuSelection = 0;
+				break;
+				
+			case 7: //Conversion three: nautical miles to kilometers
+				System.out.println("How many nautical miles would you like to convert to kilometers?");
+				int quantity7 = scanner.nextInt();
+				System.out.println("\n" + quantity7 + " nautical miles is equal to " + (quantity7 * 1.852) + " kilometers. \n");
+				menuSelection = 0;
+				break;
+				
+			case 8: //Quit Loop
+				System.out.println("Quitting.");
+				break;
+				
+			default: //number out of bounds
+				System.out.println("Unfortunately, that is not a valid entry.");
+				break;
+
+			}//end switch statement			
+		}//end while-loop
+		
+		//Closing Statement and closing input-stream for scanner class
+		System.out.println("Thanks for trying my converter!");
+		scanner.close();
+		
+	}// end main method
+}//end class body
